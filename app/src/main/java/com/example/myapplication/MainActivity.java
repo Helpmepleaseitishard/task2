@@ -78,8 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText ageText = findViewById(R.id.editText3);
         EditText scoreText = findViewById(R.id.editText4);
         Intent intent = new Intent(this, MainActivity2.class);
-
-
         intent.putExtra("name", nameText.getText().toString());
         intent.putExtra("group", groupText.getText().toString());
         intent.putExtra("age", ageText.getText().toString());
@@ -87,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
 
     }
-
     public void navigateToSecondActivity(View view) {
 
         EditText nameText = findViewById(R.id.editText1);
@@ -95,8 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText ageText = findViewById(R.id.editText3);
         EditText scoreText = findViewById(R.id.editText4);
         Intent intent = new Intent(this, MainActivity2.class);
-
-
         intent.putExtra("name", nameText.getText().toString());
         intent.putExtra("group", groupText.getText().toString());
         intent.putExtra("age", ageText.getText().toString());
