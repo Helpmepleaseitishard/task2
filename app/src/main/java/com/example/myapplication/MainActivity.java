@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("RRR","Я родился (создалось)");
-        Button btn = findViewById(R.id.button); // ID кнопки
-        btn.setOnClickListener(this);// обработчик нажатия на кнопку
+        Button btn1 = findViewById(R.id.button); // ID кнопки
+        btn1.setOnClickListener(this);// обработчик нажатия на кнопку
     }
 
 
@@ -73,18 +73,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(this, MainActivity2.class);
-        // Сообщение на вывод
         EditText nameText = findViewById(R.id.editText1);
+        EditText groupText = findViewById(R.id.editText2);
         EditText ageText = findViewById(R.id.editText3);
+        EditText scoreText = findViewById(R.id.editText4);
+        Intent intent = new Intent(this, MainActivity2.class);
 
-        String name = nameText.getText().toString();
-        int age = Integer.parseInt(ageText.getText().toString());
 
-        intent.putExtra("name", name);
-        intent.putExtra("age", age);
-
-        startActivity(intent); // НЕ ЗАБУДЬТЕ, СУКА, startActivity для запуска новой активности
+        intent.putExtra("name", nameText.getText().toString());
+        intent.putExtra("group", groupText.getText().toString());
+        intent.putExtra("age", ageText.getText().toString());
+        intent.putExtra("score", scoreText.getText().toString());
+        startActivity(intent);
 
     }
 
@@ -94,17 +94,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText groupText = findViewById(R.id.editText2);
         EditText ageText = findViewById(R.id.editText3);
         EditText scoreText = findViewById(R.id.editText4);
-
-        String name = nameText.getText().toString();
-        String group = nameText.getText().toString();
-        int age = Integer.parseInt(ageText.getText().toString());
-        int score = Integer.parseInt(ageText.getText().toString());
-
         Intent intent = new Intent(this, MainActivity2.class);
-        intent.putExtra("name", name);
-        intent.putExtra("group", group);
-        intent.putExtra("age", age);
-        intent.putExtra("score", score);
+
+
+        intent.putExtra("name", nameText.getText().toString());
+        intent.putExtra("group", groupText.getText().toString());
+        intent.putExtra("age", ageText.getText().toString());
+        intent.putExtra("score", scoreText.getText().toString());
         startActivity(intent);
     }
 }

@@ -20,20 +20,15 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         TextView messageText = findViewById(R.id.messageText);
-
-        Bundle arguments = getIntent().getExtras();
-        if (arguments != null) {
-            String name = arguments.get("name").toString();
-            String group = arguments.get("group").toString();
-            int age = arguments.getInt("age");
-            int score = arguments.getInt("score");
-            messageText.setText("Имя: " + name + "\nГруппа: " + group + "\nВозраст: " + age + "\nЖелаемые баллы: " + score);
-        }
-        setContentView(messageText);
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        String group = intent.getStringExtra("group");
+        String age = intent.getStringExtra("age");
+        String score = intent.getStringExtra("score");
+        TextView messageText1 = findViewById(R.id.messageText);
+        messageText1.setText("Имя: " + name + "\nГруппа: " + group + "\nВозраст: " + age + "\nЖелаемые баллы: " + score);
 
 
-        // Получаем Intent
-//        Intent intent = getIntent();
         // Извлекаем данные
  //       String message = intent.getStringExtra("EXTRA_MESSAGE");
 
